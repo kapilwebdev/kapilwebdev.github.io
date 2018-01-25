@@ -126,9 +126,9 @@ footer{
 
 .inside{display:inline-block !important;margin:0px auto !important;position:absolute;top:50%;left: 50%;transform: translate(-50%,-50%);width:19px;height:14px;background-color:#ecede8;z-index:2;}
 
-.inside:before{position:absolute;content:'';width:0;height:0px;border-left:9.5px solid transparent;border-right:10px solid transparent;border-bottom:7px solid #ecede8;top:-7px}
+.inside:before{position:absolute;content:'';width:0;height:0px;border-left:9.5px solid transparent;border-right:10px solid transparent;border-bottom:7px solid #ecede8;top:-6px}
 
-.inside:after{z-index:2;position:absolute;content:'';width:0;height:0px;border-left:9.5px solid transparent;border-right:10px solid transparent;border-top:7px solid #ecede8;bottom:-7px}
+.inside:after{z-index:2;position:absolute;content:'';width:0;height:0px;border-left:9.5px solid transparent;border-right:10px solid transparent;border-top:7px solid #ecede8;bottom:-6px}
 
 
 .line{
