@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Lato|Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
+    <title>Customer Guru - Omoto</title>
+</head>
+<body>
+    <nav>
+        <img src="./images/logo.png" alt="" class="logo">
+        <ul class="list">
+            <li class="list-item"><a href="#"><i class="fa fa-home"></i></a></li>
+            <li class="list-item"><a href="#"><i class="fa fa-user"></i></a></li>
+            <li class="list-item"><a href="#"><i class="fa fa-bell"></i></a></li>
+            <li class="list-item"><a href="#"><i class="fa fa-bars"></i></a></li>
+        </ul>
+    </nav>
+
+    <!-- Start of Stats Section -->
+
+    <section id="stats">
+        <div class="stat">
+            <div class="stat-wrapper">
+                <div class="number" style="background:#FC808E;"></div>
+                <div class="num">48</div>
+            </div>
+            <div class="stat-content">Issues Open</div>
+        </div>
+
+        <div class="stat">
+            <div class="stat-wrapper">
+                <div class="number"></div>
+                <div class="num">25</div>
+            </div>
+            <div class="stat-content">Issues WIP</div>
+        </div>
+
+        <div class="stat">
+            <div class="stat-wrapper">
+                <div class="number" style="background:#75BAB9;"></div>
+                <div class="num">16</div>
+            </div>
+            <div class="stat-content">Issues Resolved</div>
+        </div>
+
+    </section>
+
+    <!-- end of stats section -->
+
+
+
+
+    <!-- start of chart section -->
+
+
+    <div class="chart-container">
+        <canvas id="myChart"></canvas>
+    </div>
+
+
+    <!-- end of chart section -->
+
+
+
+    <!-- Footer -->
+
+    <footer>
+        <div class="shapes">
+                <div class="hex"><div class="inside"></div></div>
+                <i class="line"></i>
+                <i class='hex'><div class="inside"></div></i>
+                <i class="line"></i>
+                <i class='hex'></i>
+        </div>
+    </footer>
+
+    <!-- end footer -->
+
+    <script>
+        var ctx = document.getElementById("myChart").getContext('2d');
+
+// Global Options
+   Chart.defaults.global.defaultFontFamily = 'Lato';
+   Chart.defaults.global.defaultFontSize = 18;
+   Chart.defaults.global.defaultFontColor = '#777';
+   
+var myChart = new Chart(ctx, {
+   type: 'bar',
+   data: {
+       labels: ["Medical Treatment", "Nursing & Care", "Food & Beverages", "Maintenance"],
+       datasets: [{
+           data: [16, 16, 20, 16],
+           backgroundColor: [
+               '#FC808E',
+               '#FC808E',
+               '#FC808E',
+               '#FC808E'
+           ],
+           borderWidth: 1
+       }]
+       },
+       options:{
+         legend: {
+           display: false
+        },tooltips: {
+           enabled: false
+        },
+       title:{
+         display:true,
+         text:'Open Issues By Departments',
+         fontSize:25,
+         fontweight:100,
+         padding:25
+       },scales: {
+           yAxes: [{
+               ticks: {
+                suggestedMin: 5,
+                suggestedMax: 25,
+                stepSize:5,
+                padding:10
+               }
+           }],xAxes: [{
+           barPercentage: 0.5
+       }]
+       }
+   }}
+   );
+    </script>
+</body>
+</html>
